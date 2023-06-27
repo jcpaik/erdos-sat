@@ -2,7 +2,15 @@ import itertools
 
 from functools import cache
 
-class Solution:
+class PointSet:
+    '''
+    A helper class calculating maximum cap/cup lengths of a point set
+    This is not used for finding counterexamples of Erdos-Szekeres
+
+    :param v: A dictionary mapping every triple (i, j, k) with 
+        0 <= i < j < k < n to a boolean on whether they form a 3-cap or a 3-cup
+        for a fixed integer n
+    '''
     def __init__(self, v):
         self.m = max(max(k) for k in v) + 1
         self.v = v
