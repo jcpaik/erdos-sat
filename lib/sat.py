@@ -90,7 +90,8 @@ class SATInstance:
     def solve(self, filename="tmp"):
         self.write(f"{filename}.cnf")
         out_code = os.system(f"kissat {filename}.cnf {filename}.unsat > {filename}.out")
-        if out_code != 2560:
+        successful = (out_code == 2560)
+        if not successful:
             return False
         else:
             os.system(f"rm {filename}.unsat")
