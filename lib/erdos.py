@@ -95,7 +95,7 @@ def etv(n, a, b, m, flip_cup=True):
     etv.cup = cup
     return etv
 
-def etv_signotype(n, a, b, m):
+def etv_signotope(n, a, b, m):
     etvp = etv(n, a, b, m, flip_cup=True)
     v = etvp.v
     for i, j, k, l in subsets(m, 4):

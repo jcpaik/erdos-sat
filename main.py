@@ -6,7 +6,11 @@ import lib.erdos as erdos
 from lib.util import binom
 
 def main(n, a, b, N, filename=None, signotope=False):
-    inst = erdos.etv(n, a, b, N)
+    if signotope:
+        print("Signotope on")
+        inst = erdos.etv_signotope(n, a, b, N)
+    else:
+        inst = erdos.etv(n, a, b, N)
     if not filename:
         filename = f"etv_{n}_{a}_{b}_{N}"
     if inst.solve(filename):
